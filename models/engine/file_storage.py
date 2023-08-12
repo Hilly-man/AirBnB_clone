@@ -40,3 +40,12 @@ class FileStorage:
         except FileNotFoundError:
             pass
 
+
+    def get_class(self, cls_name):
+        """Returns the class type of the given class name"""
+        classes = 
+        {
+            'BaseModel': BaseModel,
+            'User': User
+        }
+        return classes.get(cls_name, None)
