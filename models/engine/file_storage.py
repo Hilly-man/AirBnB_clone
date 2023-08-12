@@ -10,6 +10,7 @@ class FileStorage:
 
     __file_path = "file.json"
     __objects = {}
+    __classes = ["BaseModel"]
 
     def all(self):
         """ This method returns the dictionary __objects """
