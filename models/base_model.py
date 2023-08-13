@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""This module is the class BaseModel"""
+
+
 import uuid
 import sys
 from datetime import datetime
