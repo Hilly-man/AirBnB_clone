@@ -12,8 +12,6 @@ from models.user import User
 
 class HBNBCommand(cmd.Cmd):
     """This is the class for the cmd module"""
-
-
     prompt = "(hbnb) "
     __classes = ["BaseModel", "User"]
 
