@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-""" This module is a class for state"""
+"""This class inherits for BaseModel"""
 
-
-from models import BaseModel
-import models
+from models.base_model import BaseModel
 
 
 class State(BaseModel):
-    """ This is the class State which inherits from BaseModel"""
+    """class State"""
+
     name = ""
