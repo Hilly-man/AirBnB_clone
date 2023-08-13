@@ -5,12 +5,14 @@ import cmd
 import sys
 from models import storage
 from models.base_model import BaseModel
+from models.user import User
 
 
 class HBNBCommand(cmd.Cmd):
     """This is the class for the cmd module"""
 
     prompt = "(hbnb) "
+    __classes = ["BaseModel", "User"]
 
     def do_quit(self, line):
         """This method exits the cmd line"""
@@ -40,12 +42,7 @@ class HBNBCommand(cmd.Cmd):
             return False
         args = line.split()
         cls = args[0]
-        for key, value in storage.all().items():
-            flag = False
-            if cls in key:
-                flag = True
-        if flag is False:
-            print("** class doesn't exist **")
+        if cls not in HBNBCommand.__classes:
             return False
         if len(args) < 2:
             print("** instance id missing **")
@@ -66,11 +63,7 @@ class HBNBCommand(cmd.Cmd):
             return False
         args = line.split()
         cls = args[0]
-        for key, value in storage.all().items():
-            flag = False
-            if cls in key:
-                flag = True
-        if flag is False:
+        if cls not in HBNBCommand.__classes:
             print("** class doesn't exist **")
             return False
         if len(args) < 2:
@@ -96,7 +89,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             try:
                 cls = line.split()[0]
-                if cls not in ["BaseModel"]:
+                if cls not in HBNBCommand.__classes:
                     print("** class doesn't exist **")
                     return False
                 print([str(obj) for key, obj in objects.items() if cls in key])
@@ -111,11 +104,7 @@ class HBNBCommand(cmd.Cmd):
             return False
         cls = args[0]
         storage.reload()
-        for key, value in storage.all().items():
-            flag = False
-            if cls in key:
-                flag = True
-        if flag is False:
+        if cls not in HBNBCommand.__classes:
             print("** class doesn't exist **")
             return False
         if len(args) < 2:
