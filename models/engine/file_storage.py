@@ -2,7 +2,7 @@
 import json
 import sys
 from models.base_model import BaseModel
-
+from models.user import User
 
 class FileStorage:
     """ This class serializes instances to a JSON file
@@ -11,7 +11,7 @@ class FileStorage:
 
     __file_path = "file.json"
     __objects = {}
-    __classes = ["BaseModel"]
+    __classes = {"BaseModel":BaseModel, "User":User}
 
     def all(self):
         """ This method returns the dictionary __objects """
@@ -38,7 +38,8 @@ class FileStorage:
             with open(self.__file_path, "r") as json_file:
                 obj_dict = json.load(json_file)
                 for key, value in obj_dict.items():
-                    obj_instance = BaseModel(**value)
+                    cls = key.split(".")[0]
+                    obj_instance = FileStorage.__classes.get(cls)(**value)
                     self.__objects[key] = obj_instance
         except FileNotFoundError:
             pass
