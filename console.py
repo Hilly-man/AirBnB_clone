@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """This module is a simple console that
 handles EOF and exit"""
+
+
 import cmd
 import sys
 from models import storage
@@ -10,6 +12,7 @@ from models.user import User
 
 class HBNBCommand(cmd.Cmd):
     """This is the class for the cmd module"""
+
 
     prompt = "(hbnb) "
     __classes = ["BaseModel", "User"]

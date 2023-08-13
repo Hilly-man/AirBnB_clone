@@ -8,4 +8,5 @@ import models
 
 class Amenity(BaseModel):
     """ This is the class Amenity which inherits from BaseModel"""
+
     name = ""
