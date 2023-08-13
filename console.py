@@ -99,8 +99,8 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, line):
         """This method updates one instance at a time"""
-        args = line.split(" ")
-        if not args:
+        args = line.split()
+        if not line:
             print("** class name missing **")
             return False
         cls = args[0]
