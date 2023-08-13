@@ -1,1 +1,2 @@
-# AirBnB_clone
+The AirBnB clone project begins from 7th of August to 14thon first deadline,
+The goal of the project is to deploy a server side simple copy of the AirBnB website with a console for server side config... 
