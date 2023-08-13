@@ -43,6 +43,7 @@ class HBNBCommand(cmd.Cmd):
         args = line.split()
         cls = args[0]
         if cls not in HBNBCommand.__classes:
+            print("** class doesn't exist **")
             return False
         if len(args) < 2:
             print("** instance id missing **")
@@ -98,7 +99,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, line):
         """This method updates one instance at a time"""
-        args = line.split()
+        args = line.split(" ")
         if not args:
             print("** class name missing **")
             return False
