@@ -2,8 +2,8 @@
 """ This module is a class for Review"""
 
 
-from models import BaseModel
 import models
+from models.base_model import BaseModel
 
 
 class Review(BaseModel):
