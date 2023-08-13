@@ -4,6 +4,7 @@ import sys
 from models.base_model import BaseModel
 from models.user import User
 
+
 class FileStorage:
     """ This class serializes instances to a JSON file
         and deserializes JSON file to instances
@@ -11,7 +12,7 @@ class FileStorage:
 
     __file_path = "file.json"
     __objects = {}
-    __classes = {"BaseModel":BaseModel, "User":User}
+    __classes = {"BaseModel": BaseModel, "User": User}
 
     def all(self):
         """ This method returns the dictionary __objects """
