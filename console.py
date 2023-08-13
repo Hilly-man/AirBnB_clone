@@ -18,7 +18,10 @@ from models.amenity import Amenity
 class HBNBCommand(cmd.Cmd):
     """This is the class for the cmd module"""
     prompt = "(hbnb) "
-    __classes = ["BaseModel", "User", "Place", "City", "State", "Review", "Amenity"]
+    __classes = ["BaseModel",
+                 "User",
+                 "Place",
+                 "City", "State", "Review", "Amenity"]
 
     def do_quit(self, line):
         """This method exits the cmd line"""
