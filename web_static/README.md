@@ -1,0 +1,1 @@
+Readme for the AIR BNB web_static project
