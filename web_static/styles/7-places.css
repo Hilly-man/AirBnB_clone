@@ -1,0 +1,26 @@
+.text-places{
+    margin-top: 20px;
+    font-size: 30px;
+    position: static;
+    top:0;
+    left:0;
+}
+
+.article-container{
+    text-align:center;
+}
+
+ .article{
+    display: inline-block;
+    width:390px;
+    padding:20px;
+    margin:20px;
+    border: #FF5A5F solid 1px;
+    border-radius:4px;
+}
+.article>h2{
+    font-size: 30px;
+    text-align: center;
+}
+
+    
