@@ -21,7 +21,7 @@ Multiple files:
 ./w3c_validator.py index.html header.html styles/common.css
 ```
 
-All errors are printed in `STDERR`
+All errors are printed to `STDERR`
 
 Return:
 Exit status is the # of errors, 0 on Success
@@ -32,13 +32,15 @@ import os
 
 
 def __print_stdout(msg):
-    """Print message in STDOUT
+    """
+      Print message to STDOUT
     """
     sys.stdout.buffer.write(msg.encode('utf-8'))
 
 
 def __print_stderr(msg):
-    """Print message in STDERR
+    """
+      Print message to STDERR
     """
     sys.stderr.buffer.write(msg.encode('utf-8'))
 
@@ -50,7 +52,7 @@ def __is_empty(file):
 
 def __validate(file_path, type):
     """
-    Start validation of files
+      Start validation of files
     """
     h = {'Content-Type': "{}; charset=utf-8".format(type)}
     # Open files in binary mode:
@@ -75,7 +77,8 @@ def __validate(file_path, type):
 
 
 def __analyse(file_path):
-    """Start analyse of a file and print the result
+    """
+      Start analyse of a file and print the result
     """
     nb_errors = 0
     try:
@@ -110,7 +113,8 @@ def __analyse(file_path):
 
 
 def __files_loop():
-    """Loop that analyses for each file from input arguments
+    """
+      Loop that analyses for each file from input arguments
     """
     nb_errors = 0
     for file_path in sys.argv[1:]:
@@ -120,12 +124,14 @@ def __files_loop():
 
 
 if __name__ == "__main__":
-    """Main
+    """
+     Main
     """
     if len(sys.argv) < 2:
         __print_stderr("usage: w3c_validator.py file1 file2 ...\n")
         exit(1)
 
-    """execute tests, then exit. Exit status = # of errors (0 on success)
+    """
+      execute tests, then exit. Exit status = # of errors (0 on success)
     """
     sys.exit(__files_loop())
