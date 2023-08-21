@@ -1,1 +1,1 @@
-Readme for the AIR BNB web_static project
+Readme for the Air BnB web_static project
