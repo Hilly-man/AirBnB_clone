@@ -9,7 +9,7 @@
 }
 
 
-.locations, .amenities{
+section .locations, section .amenities{
     height: 100%;
     width: 25%;
     display: flex;
@@ -18,31 +18,31 @@
     padding:0 40px;
 }
 
-.locations{
+section .locations{
     border-right:  1px solid #DDDDDD;
     position: relative;
 }
-.locations>h3, .amenities>h3{
+section .locations>h3, section .amenities>h3{
     font-weight: 600;
 }
-.amenities{
+section .amenities{
     position: relative;
 }
 
-.locations:hover  .popover{
+section .locations:hover  .popover{
     display: flex;
 }
-.amenities:hover .popover{
+section .amenities:hover .popover{
     display: flex;
 }
 
 
-.locations h4, .amenities h4{
+section .locations h4, section .amenities h4{
     font-weight: 400;
     font-size: 14px;
 }
 
-.locations .popover{
+section .locations .popover{
     background-color: #FAFAFA;
     position: absolute;
     border:#DDDDDD solid 1px;
@@ -55,7 +55,7 @@
     flex-direction: column;
 }
 
-.amenities .popover{
+section .amenities .popover{
     display:none;
     background-color: #FAFAFA;
     position: absolute;
